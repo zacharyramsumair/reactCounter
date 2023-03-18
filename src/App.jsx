@@ -1,7 +1,7 @@
 import { useCounter } from './useCounter';
 
 function App() {
-	const {count, plus, subtract, zero, initalValue} = useCounter(100)
+	const {count, plus, subtract, zero, initalValue} = useCounter()
 
 
 	return (
