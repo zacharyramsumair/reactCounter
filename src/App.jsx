@@ -1,31 +1,26 @@
-import { useState } from "react"
+import { useCounter } from './useCounter';
 
 function App() {
-  const [count, setCount] = useState(0)
+	const {count, plus, subtract, zero, initalValue} = useCounter(100)
 
 
+	return (
+		<main className="app">
+			<div className="container">
+				<div className="zero controls" onClick={zero}>
+					{initalValue}
+				</div>
 
-function plus(){
-  setCount(prevCount => prevCount +1)
+				<div className="subtract controls" onClick={subtract}>
+					-
+				</div>
+				<div className="count result">{count}</div>
+				<div className="plus controls" onClick={plus}>
+					+
+				</div>
+			</div>
+		</main>
+	);
 }
 
-
-function subtract(){
-  setCount(prevCount => prevCount -1)
-}
-
-
-  return (
-    <main className="app">
-      <div className="container">
-      <div className="subtract controls" onClick={subtract}>-</div>
-        <div className="count result">
-          {count}
-        </div>
-        <div className="plus controls" onClick={plus}>+</div>
-      </div>
-    </main>
-  )
-}
-
-export default App
+export default App;
